@@ -16,7 +16,8 @@ export default Ember.Service.extend({
   },
 
   setup(selector, callback) {
-    let element = document.querySelector(selector)
+    let element = (selector instanceof HTMLElement) ? selector : document.querySelector(selector);
+
     if (!element) {
       error(`service:resize-detector - could not find an element matching ${selector}`);
       return;
@@ -25,7 +26,8 @@ export default Ember.Service.extend({
   },
 
   teardown(selector, callback) {
-    let element = document.querySelector(selector)
+    let element = (selector instanceof HTMLElement) ? selector : document.querySelector(selector);
+
     if (element) {
       this.detector.removeListener(element, callback);
     }
