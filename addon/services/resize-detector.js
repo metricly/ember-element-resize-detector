@@ -1,12 +1,14 @@
 /* global elementResizeDetectorMaker */
 
+import Service from '@ember/service';
+
 import Ember from 'ember';
 
 const {
   Logger: { error }
 } = Ember;
 
-export default Ember.Service.extend({
+export default Service.extend({
 
   init() {
     this._super(...arguments);

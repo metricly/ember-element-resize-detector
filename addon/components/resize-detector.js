@@ -1,10 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+import { bind, scheduleOnce } from '@ember/runloop';
 import layout from '../templates/components/resize-detector';
-
-const {
-  inject: { service },
-  run: { scheduleOnce, bind }
-} = Ember;
 
 /**
  * Replacement for jQuery $.height()
@@ -37,7 +34,7 @@ function getWidth(el) {
 }
 
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: '',
   resizeDetector: service(),

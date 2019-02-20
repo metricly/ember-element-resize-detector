@@ -15,7 +15,6 @@ module.exports = {
     browser: true
   },
   rules: {
-    'ember/new-module-imports': 'warn',
     'ember/closure-actions': 'warn'
   },
   overrides: [

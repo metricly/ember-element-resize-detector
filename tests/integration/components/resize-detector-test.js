@@ -1,12 +1,8 @@
-import Ember from 'ember';
+import { htmlSafe } from '@ember/template';
+import { later } from '@ember/runloop';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import wait from 'ember-test-helpers/wait';
-
-const {
-  String: { htmlSafe },
-  run: { later }
-} = Ember;
 
 moduleForComponent('resize-detector', 'Integration | Component | resize detector', {
   integration: true
